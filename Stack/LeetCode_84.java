@@ -1,3 +1,6 @@
+// public class LeetCode_84 {
+    
+// }
 import java.util.*;
 class Solution {
     public int largestRectangleArea(int[] heights) {
@@ -42,3 +45,49 @@ class Solution {
         return max;
     }
 }
+
+
+
+
+// class Solution {
+//     public int largestRectangleArea(int[] heights) {
+//         int n= heights.length;
+//         ArrayDeque<Integer> st = new ArrayDeque<>();
+//         int[] ns = new int[n];
+//         int[] ps = new int[n];
+
+//         //next smaller
+//         for(int i =n-1;i>=0;i--){
+//             while(!st.isEmpty() && heights[st.peek()] >= heights[i]){
+//                 st.pop();
+//             }
+//             if(st.isEmpty()){
+//                 ns[i] = n;
+//             }else{
+//                 ns[i] = st.peek();
+//             }
+//             st.push(i);
+//         }
+
+//         ArrayDeque<Integer> st2 = new ArrayDeque<>();
+//         //previous smaller
+//         for(int i =0;i<n;i++){
+//             while(!st2.isEmpty() && heights[st2.peek()] >= heights[i]){
+//                 st2.pop();
+//             }
+//             if(st2.isEmpty()){
+//                 ns[i] = -1;
+//             }else{
+//                 ns[i] = st2.peek();
+//             }
+//             st2.push(i);
+//         }
+
+//         int max = -1;
+//         for(int i=0;i<n;i++){
+//             int area = (ns[i]-ps[i]-1)*heights[i];
+//             max = Math.max(max,area);
+//         }
+//         return max;
+//     }
+// }

@@ -1,0 +1,23 @@
+class LeetCode_154 {
+    public int findMin(int[] nums) {
+        // int mn = Integer.MAX_VALUE;
+        // for(int i=0;i<nums.length;i++){
+        //     mn= Math.min(mn,nums[i]);
+        // }
+        // return mn;
+
+        int low=0;
+        int high = nums.length-1;
+        while(low<high){
+            int mid = low+(high-low)/2;
+            if(nums[mid]<nums[high]){
+                high=mid;
+            }else if(nums[mid]>nums[high]){
+                low=mid+1;
+            }else{
+                high--;
+            }
+        }
+        return nums[low];
+    }
+}
