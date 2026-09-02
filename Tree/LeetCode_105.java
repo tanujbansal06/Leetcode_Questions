@@ -34,7 +34,7 @@ public class LeetCode_105 {
             int idx = search(in, ilo, ihi, pre[plo]);
             int lc = idx - ilo;
             node.left = createTree(pre, in, plo + 1, plo + lc, ilo, idx - 1);
-            node.left = createTree(pre, in, plo + lc + 1, phi, idx + 1, ihi);
+            node.right = createTree(pre, in, plo + lc + 1, phi, idx + 1, ihi);
             return node;
         }
 
